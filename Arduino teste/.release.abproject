@@ -1,5 +1,6 @@
 {
   "CorePlugins": [
+    "com.telerik.plugins.nativepagetransitions@0.6.5",
     "cordova-plugin-battery-status",
     "cordova-plugin-camera",
     "cordova-plugin-contacts",

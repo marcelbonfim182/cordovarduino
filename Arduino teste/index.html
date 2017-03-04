@@ -14,6 +14,69 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+    <script>
+
+      
+function chamaarduino() {
+      var str = '';
+      var lastRead = new Date();
+    
+  serial.requestPermission(
+   function success(success){
+    // BaudRate for our Chip: 115200, Adruino: 9600 
+    var opts = {"baudRate":9600, "dataBits":8, "stopBits":1, "parity":0, "dtr":false}
+    serial.open(opts, 
+     function success(){
+      
+         alert("Success");
+         serial.write(
+                    't',
+                    setTimeout(function(success) {
+                        serial.registerReadCallback (
+		                   
+                            function success(data){
+                                
+			                              var view = new Uint8Array(data);
+                                          if(view.length >= 1) {
+                                    for(var i=0; i < view.length; i++) {
+                                        // if we received a \n, the message is complete, display it
+                                        if(view[i] == 13) {
+                                            // check if the read rate correspond to the arduino serial print rate
+                                            var now = new Date();
+                                            //delta.innerText = now - lastRead;
+                                            lastRead = now;
+                                            // display the message
+                                            var value = parseInt(str);
+                                            alert(value);
+                                            str = '';
+                                            
+                                        }
+                                        // if not, concatenate with the begening of the message
+                                        else {
+                                            var temp_str = String.fromCharCode(view[i]);
+                                            var str_esc = escape(temp_str);
+                                            str += unescape(str_esc);
+                                        }
+                                    }
+                                }
+		                   }  
+		               );
+                    }, 6000)
+         
+          );
+         
+     }, function error(evt){
+      alert("Error");
+     }
+    );
+   },
+   function error(evt){
+    alert("Error");
+   }
+  );
+ };
+
+    </script>
 </head>
 
 <body id="kendoUiMobileApp">
