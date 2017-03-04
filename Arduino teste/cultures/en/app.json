@@ -1,0 +1,16 @@
+{
+  "_app": {
+    "navigationMore": "More",
+    "showMoreTitle": "Show More",
+    "qrCodeScan": "Scan"
+  },
+  "homeView": {
+    "title": "Home View"
+  },
+  "settingsView": {
+    "title": "Settings"
+  },
+  "contactsView": {
+    "title": "Contacts"
+  }
+}
