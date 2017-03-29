@@ -2,7 +2,7 @@
     <header data-role="header">
         <div data-role="navbar" class="header-text">
 
-            <span data-bind="text: strings.contactsView.title"></span>
+            <span style="display:none" data-bind="text: strings.contactsView.title"></span>
 
         </div>
     </header>
@@ -10,11 +10,14 @@
 
     <!-- START_CUSTOM_CODE_contactsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-    <ul data-role="listview" data-style="inset" data-template="contactsTemplate" data-bind="source: dataSource"></ul>
-
-    <!-- this is the template used by the listview. template items are automatically wrapped in an <li> by Kendo UI Mobile -->
-    <script type="text/x-kendo-template" id="contactsTemplate">
-        <a data-bind="click: alert">#: data.name #</a>
-    </script>
+   		<div class="introback">
+	
+			<div class="texto_pagetwo fade_leitura">ASSOPRE CONTINUAMENTE!<br><div class="efetuandoleitura animate_efetuandoleitura">EFETUANDO LEITURA...</div> </div>
+    		<div class="contador"><div class="count">0</div></div>
+    		<div class="aguarde"><div class="aguarde_letter">AGUARDE...</div></div>
+	
+			<a id="pagefour" class="botao_iniciar animate pagefour" style="display:none;" data-transition-native-androiddelay="1000" data-transition="slide" href="components/settingsView/view.html">PRÓXIMO</a>
+		
+		</div>
     <!-- END_CUSTOM_CODE_contactsView -->
 </div>

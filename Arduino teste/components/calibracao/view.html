@@ -1,0 +1,25 @@
+<div data-role="view" data-title="View" data-layout="main" data-model="app.settingsView" data-show="app.settingsView.onShow" data-after-show="app.settingsView.afterShow" id="settingsViewScreen" class="screen">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+
+            <span style="display:none" data-bind="text: strings.settingsView.title"></span>
+
+        </div>
+    </header>
+
+
+    <!-- START_CUSTOM_CODE_settingsView -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+   <div class="introback">
+			<div class="recebedados"></div>
+			
+
+       <a href="components/homeView/view.html" data-transition="slide" id="irpaginainicial" style="display:none">X</a>		
+	
+			
+			
+			<div class="texto_pagetwo">AGUARDE<br>CALIBRANDO SENSOR...</div>
+			<img src="imagens/engrenagens.gif" class="calibrando_gif">
+		
+		</div>
+    </div>

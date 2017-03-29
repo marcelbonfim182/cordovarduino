@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
+
+    <link href="styles/overrides.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+
+      
+function chamaarduino() {
+      var str = '';
+      var lastRead = new Date();
+    
+  serial.requestPermission(
+   function success(success){
+    // BaudRate for our Chip: 115200, Adruino: 9600 
+    var opts = {"baudRate":9600, "dataBits":8, "stopBits":1, "parity":0, "dtr":false}
+    serial.open(opts, 
+     function success(){
+      
+         alert("Success");
+         serial.write(
+                    't',
+                    setTimeout(function(success) {
+                        serial.registerReadCallback (
+		                   
+                            function success(data){
+                                
+			                              var view = new Uint8Array(data);
+                                          if(view.length >= 1) {
+                                    for(var i=0; i < view.length; i++) {
+                                        // if we received a \n, the message is complete, display it
+                                        if(view[i] == 13) {
+                                            // check if the read rate correspond to the arduino serial print rate
+                                            var now = new Date();
+                                            //delta.innerText = now - lastRead;
+                                            lastRead = now;
+                                            // display the message
+                                            var value = parseInt(str);
+                                            alert(value);
+                                            str = '';
+                                            
+                                        }
+                                        // if not, concatenate with the begening of the message
+                                        else {
+                                            var temp_str = String.fromCharCode(view[i]);
+                                            var str_esc = escape(temp_str);
+                                            str += unescape(str_esc);
+                                        }
+                                    }
+                                }
+		                   }  
+		               );
+                    }, 6000)
+         
+          );
+         
+     }, function error(evt){
+      alert("Error");
+     }
+    );
+   },
+   function error(evt){
+    alert("Error");
+   }
+  );
+ };
+
+    </script>
+</head>
+
+<body id="kendoUiMobileApp">
+    <script src="components/contactsView/index.js"></script>
+    <script src="components/settingsView/index.js"></script>
+    <script src="components/homeView/index.js"></script>
+    <div data-role="layout" data-id="main">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <footer data-role="footer">
+            <div data-role="tabstrip" id="navigation-container">
+                <a href="components/homeView/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.homeView.title"></span></a>
+                <a href="components/settingsView/view.html" data-icon="settings"><span class="navigation-link-text" data-bind="text: strings.settingsView.title"></span></a>
+                <a href="components/contactsView/view.html" data-icon="contacts"><span class="navigation-link-text" data-bind="text: strings.contactsView.title"></span></a>
+            </div>
+            <div id="navigation-container-more" style="display: none">
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="navigation-show-more-view" data-role="view" data-title="Show More" data-layout="main">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-bind="text: strings._app.showMoreTitle"></span>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset" data-click="app.listViewClick">
+        </ul>
+    </div>
+
+    <div data-role="layout" data-id="main-nonav">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <footer data-role="footer">
+        </footer>
+    </div>
+    <!--  start index html save -->
+    <!--  end index html save -->
+
+    <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
+</body>
+
+</html>

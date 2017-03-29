@@ -1,17 +1,30 @@
-<div data-role="view" data-title="View" data-layout="main" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow" id="homeViewScreen" class="screen">
-    <header data-role="header">
+<div class="fundo" data-role="view" data-scroller='{"elastic": false}' data-title="View" data-layout="main" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow" id="homeViewScreen" class="screen">
+   <header data-role="header">
         <div data-role="navbar" class="header-text">
 
-            <span data-bind="text: strings.homeView.title"></span>
+            <span style="display:none"data-bind="text: strings.homeView.title"></span>
 
         </div>
     </header>
-
+    
+    
+    
+    <a id="clica_chamacontador" style="display:none;" href="components/contactsView/view.html"></a>
+    <a style="display: table!important;width: 100%;height: 576px;position: relative;z-index: 9999999999;" onclick="setTimeout(chamacontador, 500);">
 
     <!-- START_CUSTOM_CODE_homeView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-    <h1 data-bind="html: title"></h1>
-    <button id="connect_button" onclick="chamaarduino();">Serial Communication</button>
+    <h1 class="titulo">AO INICIAR ASSOPRE<br>POR 5 SEGUNDOS</h1>
+    <img class="imagemsopra" src="imagens/sopra.gif">
+    <div href="components/contactsView/view.html" class="chamadas">TOQUE PARA INICIAR</div>
+    </a>
+    
 
     <!-- END_CUSTOM_CODE_homeView -->
 </div>
+
+<div data-role="modalview" id="foo">
+    <a data-role="button"  data-click="closeModal">fechar</a>
+    <div class="textochecagem">Antes de iniciar o aplicativo efetue a checagem de comunicação com a porta serial:</div>
+    <button class="botaocheca" onclick="inicia_comunicacao();">Checar comunicacao</button>
+</div> 

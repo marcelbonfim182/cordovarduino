@@ -2,14 +2,22 @@
     <header data-role="header">
         <div data-role="navbar" class="header-text">
 
-            <span data-bind="text: strings.settingsView.title"></span>
+            <span style="display:none" data-bind="text: strings.settingsView.title"></span>
 
         </div>
     </header>
 
-
     <!-- START_CUSTOM_CODE_settingsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-    <h1 data-bind="html: title"></h1>
+    <div class="introback">		
+    <div class="recebedados"></div>
+	<a href="components/calibracao/view.html" data-transition="slide" id="ircalibracao" style="display:none">X</a>
+	<a  class="botao_volta" onclick="if($('.gl').html()=='0.0 g/l'){checa_calibracao()}else{checa_calibracao_desliga()};document.getElementById('ircalibracao').click();">X</a>
+			<div class="texto_pagetwo2 texto_resultado"></div>
+			<div class="gl"></div>			
+    		<div class="resultado" style="display:none!important;"></div>
+            <div class="imprimindo animate_imprimindo">IMPRIMINDO MULTA...</div>
+   </div>
     <!-- END_CUSTOM_CODE_settingsView -->
 </div>
+
