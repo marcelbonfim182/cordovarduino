@@ -3,9 +3,9 @@
   "ProjectGuid": "7f8a19ce-a432-4908-b743-903fa9394d8f",
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.Arduinoteste",
-  "DisplayName": "Arduino teste",
+  "DisplayName": "Bebômetro",
   "Author": "",
-  "Description": "Arduino teste",
+  "Description": "Bebômetro",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
