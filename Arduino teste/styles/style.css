@@ -203,19 +203,29 @@ margin-top: -1%;
 margin-bottom: -28px;
 font-weight: 100!important;
 font-family: sans-serif-light;
-transform:translateX();
+transform:translateX(0);
 transform:translateZ(0);
--webkit-backface-visibility: hidden;
+-webkit-transform: translate3d(0,0,0);
+
  -webkit-perspective: 1000;
- -webkit-transform: translate3d(0,0,0);
+ -webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+-ms-transition: all 0.5s ease;
+transition: all 0.5s ease;
+opacity:0;
+text-shadow: 0 0 0px rgba(255,255,255,1) , 0 0 0px rgba(255,255,255,1) , 0 0 0px rgba(255,255,255,1) , 0 0 0px #00ffff , 0 0 0px #00ffff , 0 0 0px #00ffff , 0 0 0px #00ffff;
 }
 
+
 .gl_green {
-    text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+    text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff!important;
+    opacity:1!important;
 }
 
 .gl_red {
-   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #ff00de , 0 0 70px #ff00de , 0 0 80px #ff00de , 0 0 100px #ff00de;
+   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #ff00de , 0 0 70px #ff00de , 0 0 80px #ff00de , 0 0 100px #ff00de!important;
+   opacity:1!important;
 }
 
 .imprimindo {
@@ -385,4 +395,11 @@ border-radius: 10px;
 }
 
 
+.remove_imprimindo {
+display:none!important;
+}
+
+.add_imprimindo {
+display:table!important;
+}
 
