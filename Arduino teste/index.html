@@ -310,7 +310,7 @@ function chamacontador() {
 			setTimeout(function(){  
                 document.getElementById("irpaginainicial").click();
 			}, 1500);
-					
+			
         } else {
 			setTimeout(function(){ 
 			    checa_calibracao();
@@ -452,12 +452,34 @@ function openModal() {
    $("#foo").data("kendoMobileModalView").open();
 }
 
+
 function closeModal() {
    $("#foo").data("kendoMobileModalView").close();
 }
 
 new kendo.mobile.Application();
 </script>
+
+<script>
+$(document).ready(function(){
+    openModal();
+}
+</script>
+
+<script>
+ function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+    }
+
+     function onVolumeDownKeyDown() {
+         navigator.app.exitApp();
+         navigator.device.exitApp();
+    }
+</script>
+
+
+
 </head>
 
 <body id="kendoUiMobileApp" onload="onBodyLoad()">

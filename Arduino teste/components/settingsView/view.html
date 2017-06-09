@@ -6,13 +6,14 @@
 
         </div>
     </header>
-
+    
     <!-- START_CUSTOM_CODE_settingsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <div class="introback">		
     <div class="recebedados"></div>
 	<a href="components/calibracao/view.html" data-transition="slide" id="ircalibracao" style="display:none">X</a>
-	<a  class="botao_volta" onclick="if($('.gl').html()=='0.0 g/l'){checa_calibracao()}else{checa_calibracao_desliga()};document.getElementById('ircalibracao').click();">X</a>
+	<a  class="botao_volta" onclick="if($('.gl').html()=='0.0 g/l'){checa_calibracao()}else{checa_calibracao_desliga()};document.getElementById('ircalibracao').click();$('.gl').removeClass('gl_green');
+$('.gl').removeClass('gl_red');">X</a>
 			<div class="texto_pagetwo2 texto_resultado"></div>
 			<div class="gl"></div>			
     		<div class="resultado" style="display:none!important;"></div>

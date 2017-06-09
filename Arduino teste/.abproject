@@ -2,9 +2,9 @@
   "ProjectName": "Arduino teste",
   "ProjectGuid": "7f8a19ce-a432-4908-b743-903fa9394d8f",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.Arduinoteste",
+  "AppIdentifier": "com.mesmera.bebometro",
   "DisplayName": "Bebômetro",
-  "Author": "",
+  "Author": "Mesmera Comunicação Digital",
   "Description": "Bebômetro",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
@@ -172,7 +172,7 @@
     "Landscape"
   ],
   "AndroidHardwareAcceleration": "true",
-  "iOSStatusBarStyle": "Default",
+  "iOSStatusBarStyle": "Hidden",
   "Framework": "Cordova",
   "WP8TileTitle": "",
   "WP8Publisher": "",
@@ -191,5 +191,28 @@
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
   ],
-  "iOSDeploymentTarget": "6.0"
+  "iOSDeploymentTarget": "8.4",
+  "CordovaPluginVariables": {},
+  "CorePlugins": [
+    "com.telerik.plugins.nativepagetransitions@0.6.5",
+    "cordova-plugin-battery-status",
+    "cordova-plugin-camera",
+    "cordova-plugin-console",
+    "cordova-plugin-contacts",
+    "cordova-plugin-device",
+    "cordova-plugin-device-motion",
+    "cordova-plugin-device-orientation",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-geolocation",
+    "cordova-plugin-globalization",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-media",
+    "cordova-plugin-media-capture",
+    "cordova-plugin-network-information",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-vibration",
+    "cordova-plugin-whitelist"
+  ]
 }

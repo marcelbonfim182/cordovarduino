@@ -3,47 +3,70 @@
 app.settingsView = kendo.observable({
     onShow: function() {
                 if (datagl <= 50) {
-           
                     $(".gl").removeClass("gl_red");
+                    $(".gl").removeClass("gl_green");
+                    setTimeout(function(){
                     $(".gl").addClass("gl_green");
+                    }, 1200);
                     $(".texto_pagetwo2").removeClass("texto_pagetwo2_color_red");
                     $(".texto_pagetwo2").addClass("texto_pagetwo2_color_green");
 					$(".resultado").addClass("icon_1");
 					$(".texto_resultado").html("<div class='resultado_frase'> Você está sóbrio!</div>Um conselho: Se não aguenta, bebe leite!");
 					$(".texto_resultado").addClass("esta_sobrio");
-						
+					$(".imprimindo").addClass("remove_imprimindo");	
+                    $(".imprimindo").removeClass("add_imprimindo");
 				}
-
+ 
 				if (datagl >= 51 && datagl <=200) {
                   $(".texto_pagetwo2").removeClass("texto_pagetwo2_color_green");
                   $(".texto_pagetwo2").addClass("texto_pagetwo2_color_red");  
                   $(".gl").removeClass("gl_green");
+                  $(".gl").removeClass("gl_red");
+                  setTimeout(function(){
                   $(".gl").addClass("gl_red");
+                  }, 1300);
 				  $(".resultado").addClass("icon_2");
 				  $(".texto_resultado").html("<div class='resultado_frase'>Embriagado! Mas só de leve.</div>Está sendo multado por alguns goles de cerveja!");
-					
+				  $(".imprimindo").addClass("remove_imprimindo");
+                  setTimeout(function(){
+                    $(".imprimindo").removeClass("remove_imprimindo");
+                  }, 6000);
+                  
+                  
 				}
         
 				if (datagl >= 201 && datagl <=400) {
                   $(".texto_pagetwo2").removeClass("texto_pagetwo2_color_green");
                   $(".texto_pagetwo2").addClass("texto_pagetwo2_color_red");  
                   $(".gl").removeClass("gl_green");
+                  $(".gl").removeClass("gl_red");
+                  setTimeout(function(){
                   $(".gl").addClass("gl_red");
+                  }, 1300);
 				  $(".resultado").addClass("icon_3");
 				  $(".texto_resultado").html("<div class='resultado_frase'>Você Está embriagado!</div>Se pensa que cachaça é água... cachaça não é água não!");
-					
+				  $(".imprimindo").addClass("remove_imprimindo");
+                  setTimeout(function(){
+                    $(".imprimindo").removeClass("remove_imprimindo");
+                  }, 6000);
 				}
 
 				if (datagl >= 401 && datagl <=1000) {
                   $(".texto_pagetwo2").removeClass("texto_pagetwo2_color_green");
                   $(".texto_pagetwo2").addClass("texto_pagetwo2_color_red");  
                   $(".gl").removeClass("gl_green");
+                  $(".gl").removeClass("gl_red");
+                  setTimeout(function(){
                   $(".gl").addClass("gl_red");
+                  }, 1300);
 				  $(".resultado").addClass("icon_4");
 				  $(".texto_resultado").html("<div class='resultado_frase'>Nossa! É coma alcoólico!!</div> Pague a multa e chame o samu!");	  
-					
+				  $(".imprimindo").addClass("remove_imprimindo");
+                  setTimeout(function(){
+                    $(".imprimindo").removeClass("remove_imprimindo");
+                  }, 6000);
 				}
-			
+		
 			
 			
 				

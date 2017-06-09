@@ -8,7 +8,8 @@
 
 
 div.km-content.km-widget.km-scroll-wrapper {
-background: url("../imagens/brickwall.jpg")!important;
+/*/background: url("../imagens/brickwall.jpg")!important;/*/
+background:#000!important;
     transform:translateX();
 transform:translateZ(0);
 -webkit-backface-visibility: hidden;
@@ -30,7 +31,7 @@ font-family: 'Conv_Brett and Beer';
 color: #fff!important;
 font-size: 27px!important;
 position: absolute;
-top: 28%;
+top: 2%;
 left: 50%;
 margin-left: -155px!important;
 margin-top: 292px;
@@ -51,14 +52,22 @@ width: 200px;
     
 }
 
+.imagemseta {
+position: absolute;
+left: 50%;
+bottom: 0%!important;
+margin-left: -21px;
+margin-top: 144px; 
+}
+
 h1.titulo {  
 font-family: 'Conv_Brett and Beer';
 color: #83FFF9!important;
-font-size: 54px!important;
+font-size: 45px!important;
 position: absolute;
-top: 51%;
+top: 60%;
 left: 50%;
-margin-left: -239px!important;
+margin-left: -330px!important;
 margin-top: 18px;
 text-align: center;
 }
@@ -402,4 +411,8 @@ display:none!important;
 .add_imprimindo {
 display:table!important;
 }
+.checaporta {
+border:2px dotted #fff!important;
+}
+
 
